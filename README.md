@@ -1,49 +1,93 @@
-# Getting Started with Create React App
+# StreakRace Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A high-performance Formula-1 racing website built with React that delivers a cinematic, aggressive, and premium motorsport experience.
+
+## Features
+
+- **Immersive Loading Experience**: Racing-themed loading sequence with Formula-1 car animation
+- **Responsive Navigation**: Scroll-adaptive navigation with racing aesthetics
+- **Cinematic Hero Section**: Full-viewport hero with high-resolution F1 imagery
+- **Interactive Driver Cards**: Hover-reveal statistics with smooth animations
+- **Dynamic Race Highlights**: Motion-based reveals with parallax effects
+- **Technical Car Showcase**: Close-up car imagery with technical aesthetics
+- **Partners Section**: Horizontal scrolling partner logos with hover effects
+- **Performance Optimized**: Lazy loading, smooth animations, and accessibility compliance
+
+## Tech Stack
+
+- **React 19+**: Modern React with functional components and hooks
+- **Framer Motion**: Smooth animations and scroll-triggered effects
+- **React Router**: Single-page application navigation
+- **CSS Modules**: Component-scoped styling
+- **Fast-check**: Property-based testing
+- **Jest & React Testing Library**: Unit and integration testing
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── LoadingScreen/
+│   ├── Navigation/
+│   ├── HeroSection/
+│   ├── DriverCard/
+│   ├── RaceHighlights/
+│   ├── TechnologySection/
+│   └── PartnersSection/
+├── pages/              # Route-based page components
+├── styles/             # Global styles and theme
+├── assets/             # Images, videos, and icons
+├── utils/              # Utility functions and constants
+├── hooks/              # Custom React hooks
+├── context/            # React context providers
+└── tests/              # Test utilities and configurations
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
 ### `npm test`
+Launches the test runner in interactive watch mode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run test:run`
+Runs tests once without watch mode
+
+### `npm run test:coverage`
+Runs tests with coverage report
 
 ### `npm run build`
+Builds the app for production
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Design System
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Color Palette
+- **Primary Black**: #000000 (backgrounds)
+- **Racing Red**: #E30118 (CTAs, highlights)
+- **Performance Yellow**: #FDD900 (accents, motion streaks)
+- **Neutral Silver**: #C0BFBF (metadata, borders)
+- **Pure White**: #FFFFFF (primary text)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Responsive Breakpoints
+- **Mobile**: 320px - 767px
+- **Tablet**: 768px - 1199px
+- **Desktop**: 1200px+
 
-### `npm run eject`
+## Development Guidelines
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Component Structure**: Each component should have its own directory with JS, CSS, and test files
+2. **Styling**: Use CSS Modules for component-scoped styles
+3. **Testing**: Write both unit tests and property-based tests for new functionality
+4. **Performance**: Implement lazy loading and optimize animations for 60fps
+5. **Accessibility**: Ensure WCAG 2.1 AA compliance for all interactive elements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Install dependencies: `npm install`
+2. Start development server: `npm start`
+3. Run tests: `npm test`
+4. Build for production: `npm run build`
 
 ### Code Splitting
 

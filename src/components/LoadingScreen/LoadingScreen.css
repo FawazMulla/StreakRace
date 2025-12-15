@@ -1,0 +1,153 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Racing grid texture background */
+.racing-grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  animation: gridMove 2s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Track container */
+.track-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 60px;
+  margin-bottom: 60px;
+}
+
+/* Horizontal track line */
+.track-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #FDD900 0%,
+    #E30118 50%,
+    #FDD900 100%
+  );
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px rgba(253, 217, 0, 0.5);
+}
+
+/* F1 Car positioning */
+.f1-car {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.05s linear;
+  filter: drop-shadow(0 0 8px rgba(227, 1, 24, 0.6));
+}
+
+.f1-car svg {
+  display: block;
+}
+
+/* Progress container */
+.progress-container {
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.progress-counter {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: 'Arial Black', Arial, sans-serif;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 20px rgba(227, 1, 24, 0.8),
+    0 0 40px rgba(227, 1, 24, 0.4);
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #C0BFBF;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .track-container {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .f1-car svg {
+    width: 40px;
+    height: 16px;
+  }
+  
+  .progress-counter {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .track-container {
+    width: 95%;
+    height: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .f1-car svg {
+    width: 30px;
+    height: 12px;
+  }
+  
+  .progress-counter {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .loading-text {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+}
