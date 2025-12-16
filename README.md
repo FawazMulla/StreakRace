@@ -1,114 +1,233 @@
-# StreakRace Website
+# 🏎️ StreakRace - Formula 1 Racing Website
 
-A high-performance Formula-1 racing website built with React that delivers a cinematic, aggressive, and premium motorsport experience.
+> **Elite Formula-1 Racing Organization • Championship Winners • Speed Innovators**
 
-## Features
+A high-performance, single-page racing website built with React that delivers a cinematic motorsport experience. Features racing-themed animations, interactive elements, and a clean design focused on speed and performance.
 
-- **Immersive Loading Experience**: Racing-themed loading sequence with Formula-1 car animation
-- **Responsive Navigation**: Scroll-adaptive navigation with racing aesthetics
-- **Cinematic Hero Section**: Full-viewport hero with high-resolution F1 imagery
-- **Interactive Driver Cards**: Hover-reveal statistics with smooth animations
-- **Dynamic Race Highlights**: Motion-based reveals with parallax effects
-- **Technical Car Showcase**: Close-up car imagery with technical aesthetics
-- **Partners Section**: Horizontal scrolling partner logos with hover effects
-- **Performance Optimized**: Lazy loading, smooth animations, and accessibility compliance
+## ✨ Features
 
-## Tech Stack
+### 🏁 **Core Experience**
+- **Racing Loader**: 3-second F1 car animation on every page refresh
+- **Cinematic Hero**: Full-screen background with racing typography
+- **Animated Navbar**: Fixed navigation with racing car emoji and pulse effects
+- **Interactive Sections**: Smooth scroll animations and hover effects
+- **Location Map**: Embedded Google Maps pointing to Ghatkopar, Mumbai
 
-- **React 19+**: Modern React with functional components and hooks
+### 🎨 **Visual Design**
+- **Racing Theme**: Black, red (#E30118), and yellow (#FDD900) color scheme
+- **Motorsport Typography**: Orbitron font for racing aesthetics
+- **Emoji Icons**: Clean design without image dependencies
+- **Responsive Layout**: Mobile-first design that works on all devices
+- **Performance Optimized**: Smooth 60fps animations
+
+## 🚀 Tech Stack
+
+- **React 19**: Modern functional components with hooks
 - **Framer Motion**: Smooth animations and scroll-triggered effects
-- **React Router**: Single-page application navigation
-- **CSS Modules**: Component-scoped styling
-- **Fast-check**: Property-based testing
-- **Jest & React Testing Library**: Unit and integration testing
+- **CSS3**: Custom styling with racing theme
+- **Google Maps**: Embedded location map
+- **PWA Ready**: Installable as mobile app
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-src/
-├── components/          # Reusable UI components
-│   ├── LoadingScreen/
-│   ├── Navigation/
-│   ├── HeroSection/
-│   ├── DriverCard/
-│   ├── RaceHighlights/
-│   ├── TechnologySection/
-│   └── PartnersSection/
-├── pages/              # Route-based page components
-├── styles/             # Global styles and theme
-├── assets/             # Images, videos, and icons
-├── utils/              # Utility functions and constants
-├── hooks/              # Custom React hooks
-├── context/            # React context providers
-└── tests/              # Test utilities and configurations
+streak-race-website/
+├── public/
+│   ├── images/
+│   │   └── hero/              # Hero background image folder
+│   ├── favicon.svg            # Racing car favicon
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── LoadingScreen/     # Racing loader animation
+│   │   └── Navbar/            # Fixed navigation with favicon
+│   ├── pages/
+│   │   └── HomePage/          # Main landing page
+│   ├── styles/
+│   │   └── globals.css        # Global racing theme styles
+│   └── App.js                 # Main app component
+└── README.md
 ```
 
-## Available Scripts
+## 🎯 Quick Start
 
-### `npm start`
-Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
 
-### `npm test`
-Launches the test runner in interactive watch mode
+### Installation
+```bash
+# Clone the repository
+git clone <repository-url>
+cd streak-race-website
 
-### `npm run test:run`
-Runs tests once without watch mode
+# Install dependencies
+npm install
 
-### `npm run test:coverage`
-Runs tests with coverage report
+# Start development server
+npm start
+```
 
-### `npm run build`
-Builds the app for production
+The app will open at [http://localhost:3000](http://localhost:3000)
 
-## Design System
+## 🖼️ Adding Images (Optional)
+
+The site works perfectly without images, but you can add a hero background:
+
+1. **Add hero image**: Place your image at `public/images/hero/team-hero.jpg`
+2. **Recommended size**: 1920x1080px (landscape)
+3. **Supported formats**: .jpg, .png, .webp
+
+The site automatically falls back to a placeholder if no image is found.
+
+## 🎨 Design System
 
 ### Color Palette
-- **Primary Black**: #000000 (backgrounds)
-- **Racing Red**: #E30118 (CTAs, highlights)
-- **Performance Yellow**: #FDD900 (accents, motion streaks)
-- **Neutral Silver**: #C0BFBF (metadata, borders)
-- **Pure White**: #FFFFFF (primary text)
+```css
+--racing-black: #000000     /* Primary background */
+--racing-red: #E30118       /* CTAs and highlights */
+--racing-yellow: #FDD900    /* Accents and effects */
+--racing-silver: #C0BFBF    /* Secondary text */
+--racing-white: #FFFFFF     /* Primary text */
+```
+
+### Typography
+- **Primary Font**: Orbitron (racing/tech aesthetic)
+- **Fallback**: Arial, sans-serif
+- **Weights**: 400 (normal), 700 (bold), 900 (black)
 
 ### Responsive Breakpoints
 - **Mobile**: 320px - 767px
-- **Tablet**: 768px - 1199px
+- **Tablet**: 768px - 1199px  
 - **Desktop**: 1200px+
 
-## Development Guidelines
+## 📱 Sections Overview
 
-1. **Component Structure**: Each component should have its own directory with JS, CSS, and test files
-2. **Styling**: Use CSS Modules for component-scoped styles
-3. **Testing**: Write both unit tests and property-based tests for new functionality
-4. **Performance**: Implement lazy loading and optimize animations for 60fps
-5. **Accessibility**: Ensure WCAG 2.1 AA compliance for all interactive elements
+### 1. **Hero Section**
+- Full-screen background image support
+- Animated title and subtitle
+- Two call-to-action buttons
+- Racing-themed typography
 
-## Getting Started
+### 2. **About Section**
+- Organization description
+- Racing heritage and innovation focus
 
-1. Install dependencies: `npm install`
-2. Start development server: `npm start`
-3. Run tests: `npm test`
-4. Build for production: `npm run build`
+### 3. **Statistics**
+- 4 key metrics with animated counters
+- Championships, victories, podiums, years
 
-### Code Splitting
+### 4. **Elite Drivers**
+- 3 driver profiles with emoji icons
+- Names, roles, and racing numbers
+- Hover animations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 5. **Recent Victories**
+- 3 major achievements
+- Trophy emojis and descriptions
+- Card-based layout
 
-### Analyzing the Bundle Size
+### 6. **Innovation Lab**
+- Technology showcase
+- Rotating gear animation
+- Feature list with racing tech
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 7. **Location**
+- Interactive Google Maps
+- Ghatkopar, Mumbai address
+- Contact information and hours
 
-### Making a Progressive Web App
+### 8. **Join Section**
+- Recruitment call-to-action
+- Apply and contact buttons
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛠️ Available Scripts
 
-### Advanced Configuration
+```bash
+# Development
+npm start          # Start dev server (localhost:3000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Production
+npm run build      # Build for production
+npm run serve      # Serve production build locally
 
-### Deployment
+# Testing (if tests are added)
+npm test           # Run tests in watch mode
+npm run test:run   # Run tests once
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌐 Deployment
 
-### `npm run build` fails to minify
+### Build for Production
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Deploy Options
+- **Netlify**: Drag & drop the `build` folder
+- **Vercel**: Connect GitHub repository
+- **GitHub Pages**: Use `gh-pages` package
+- **Firebase Hosting**: Use Firebase CLI
+
+## 📍 Location Details
+
+**StreakRace Racing HQ**
+- 📍 Ghatkopar East, Mumbai, Maharashtra 400077, India
+- 📞 +91 98765 43210
+- ✉️ info@streakrace.com  
+- 🕒 Mon-Sat: 9:00 AM - 6:00 PM
+
+## 🎭 Customization
+
+### Change Colors
+Edit `src/styles/globals.css` and update CSS variables:
+```css
+:root {
+  --racing-red: #YOUR_COLOR;
+  --racing-yellow: #YOUR_COLOR;
+}
+```
+
+### Update Content
+Edit `src/pages/HomePage/HomePage.js` to modify:
+- Driver names and roles
+- Achievement titles
+- Company information
+- Contact details
+
+### Modify Location
+Update the Google Maps embed URL in HomePage.js with your coordinates.
+
+## 🚀 Performance Features
+
+- **Lightweight**: No heavy image dependencies
+- **Fast Loading**: Optimized animations and code
+- **Mobile Optimized**: Touch-friendly interactions
+- **SEO Ready**: Proper meta tags and structure
+- **PWA Support**: Installable on mobile devices
+
+## 🎯 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+---
+
+**Built with ❤️ for the racing community**
+
+*Ready to race? Start your engines with `npm start`!* 🏁
