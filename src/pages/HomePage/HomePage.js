@@ -8,12 +8,27 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
-          <div className="hero-image-placeholder">
+          <img
+            src="/images/hero/team-hero.jpg"
+            alt="StreakRace Racing Team"
+            className="hero-image"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+              const placeholder = e.currentTarget.parentElement.querySelector(".hero-image-placeholder");
+              if (placeholder) placeholder.style.display = "flex";
+            }}
+
+          // onError={(e) => {
+          //   e.target.style.display = 'none';
+          //   e.target.nextSibling.style.display = 'flex';
+          // }}
+          />
+          <div className="hero-image-placeholder" style={{ display: 'none' }}>
             <span>TEAM HERO IMAGE</span>
           </div>
           <div className="hero-overlay" />
         </div>
-        
+
         <div className="hero-content">
           <motion.h1
             className="hero-title"
@@ -23,7 +38,7 @@ const HomePage = () => {
           >
             STREAKRACE RACING
           </motion.h1>
-          
+
           <motion.p
             className="hero-subtitle"
             initial={{ opacity: 0, y: 30 }}
@@ -32,7 +47,7 @@ const HomePage = () => {
           >
             Elite Formula-1 Racing Organization • Championship Winners • Speed Innovators
           </motion.p>
-          
+
           <motion.div
             className="hero-buttons"
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +71,7 @@ const HomePage = () => {
           >
             RACING EXCELLENCE
           </motion.h2>
-          
+
           <motion.div
             className="about-content"
             initial={{ opacity: 0, y: 30 }}
@@ -64,9 +79,9 @@ const HomePage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p>
-              StreakRace Racing Organization stands at the forefront of Formula-1 motorsport, 
-              combining decades of racing heritage with cutting-edge innovation. Our team of 
-              world-class drivers, engineers, and strategists work tirelessly to push the 
+              StreakRace Racing Organization stands at the forefront of Formula-1 motorsport,
+              combining decades of racing heritage with cutting-edge innovation. Our team of
+              world-class drivers, engineers, and strategists work tirelessly to push the
               boundaries of speed and performance.
             </p>
           </motion.div>
@@ -109,12 +124,12 @@ const HomePage = () => {
           >
             OUR ELITE DRIVERS
           </motion.h2>
-          
+
           <div className="drivers-grid">
             {[
-              { name: 'Alex Thunder', number: '01', role: 'Lead Driver' },
-              { name: 'Maria Velocity', number: '02', role: 'Speed Specialist' },
-              { name: 'Jake Lightning', number: '03', role: 'Track Master' }
+              { name: 'Alex Thunder', number: '01', role: 'Lead Driver', image: 'alex-thunder.jpg' },
+              { name: 'Maria Velocity', number: '02', role: 'Speed Specialist', image: 'maria-velocity.jpg' },
+              { name: 'Jake Lightning', number: '03', role: 'Track Master', image: 'jake-lightning.jpg' }
             ].map((driver, index) => (
               <motion.div
                 key={index}
@@ -124,8 +139,19 @@ const HomePage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="driver-image-placeholder">
-                  <span>DRIVER #{driver.number}</span>
+                <div className="driver-image-container">
+                  <img
+                    src={`/images/drivers/${driver.image}`}
+                    alt={driver.name}
+                    className="driver-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="driver-image-placeholder" style={{ display: 'none' }}>
+                    <span>DRIVER #{driver.number}</span>
+                  </div>
                 </div>
                 <div className="driver-info">
                   <h3>{driver.name}</h3>
@@ -149,12 +175,12 @@ const HomePage = () => {
           >
             RECENT VICTORIES
           </motion.h2>
-          
+
           <div className="achievements-grid">
             {[
-              { title: 'Monaco Grand Prix 2024', description: 'Dominant 1-2 finish with record-breaking lap times' },
-              { title: 'Silverstone Championship', description: 'Strategic masterclass in challenging weather conditions' },
-              { title: 'Constructors Championship', description: 'Third consecutive title with innovative aerodynamics' }
+              { title: 'Monaco Grand Prix 2024', description: 'Dominant 1-2 finish with record-breaking lap times', image: 'monaco-2024.jpg' },
+              { title: 'Silverstone Championship', description: 'Strategic masterclass in challenging weather conditions', image: 'silverstone.jpg' },
+              { title: 'Constructors Championship', description: 'Third consecutive title with innovative aerodynamics', image: 'constructors.jpg' }
             ].map((achievement, index) => (
               <motion.div
                 key={index}
@@ -163,8 +189,19 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="achievement-image-placeholder">
-                  <span>VICTORY #{index + 1}</span>
+                <div className="achievement-image-container">
+                  <img
+                    src={`/images/achievements/${achievement.image}`}
+                    alt={achievement.title}
+                    className="achievement-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="achievement-image-placeholder" style={{ display: 'none' }}>
+                    <span>VICTORY #{index + 1}</span>
+                  </div>
                 </div>
                 <div className="achievement-content">
                   <h3>{achievement.title}</h3>
@@ -187,17 +224,28 @@ const HomePage = () => {
           >
             INNOVATION LAB
           </motion.h2>
-          
+
           <div className="tech-content">
             <motion.div
-              className="tech-image-placeholder"
+              className="tech-image-container"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <span>RACING TECHNOLOGY</span>
+              <img
+                src="/images/technology/racing-tech.jpg"
+                alt="Racing Technology"
+                className="tech-image"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="tech-image-placeholder" style={{ display: 'none' }}>
+                <span>RACING TECHNOLOGY</span>
+              </div>
             </motion.div>
-            
+
             <motion.div
               className="tech-text"
               initial={{ opacity: 0, x: 50 }}
@@ -206,8 +254,8 @@ const HomePage = () => {
             >
               <h3>Next-Generation Racing</h3>
               <p>
-                Our state-of-the-art facility houses the most advanced racing technology, 
-                from AI-powered telemetry systems to revolutionary hybrid powertrains. 
+                Our state-of-the-art facility houses the most advanced racing technology,
+                from AI-powered telemetry systems to revolutionary hybrid powertrains.
                 Every component is engineered for maximum performance and reliability.
               </p>
               <ul className="tech-features">
@@ -232,7 +280,7 @@ const HomePage = () => {
           >
             <h2>JOIN THE LEGACY</h2>
             <p>
-              Be part of racing history. Whether you're a driver, engineer, or racing enthusiast, 
+              Be part of racing history. Whether you're a driver, engineer, or racing enthusiast,
               StreakRace Racing offers opportunities to excel in the world's most demanding motorsport.
             </p>
             <div className="join-buttons">
