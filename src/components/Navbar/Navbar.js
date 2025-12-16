@@ -16,7 +16,10 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          StreakRace
+          <div className="navbar-favicon">
+            🏎️
+          </div>
+          <span className="navbar-text">StreakRace</span>
         </motion.div>
       </div>
     </motion.nav>

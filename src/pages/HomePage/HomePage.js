@@ -127,9 +127,9 @@ const HomePage = () => {
 
           <div className="drivers-grid">
             {[
-              { name: 'Alex Thunder', number: '01', role: 'Lead Driver', image: 'alex-thunder.jpg' },
-              { name: 'Maria Velocity', number: '02', role: 'Speed Specialist', image: 'maria-velocity.jpg' },
-              { name: 'Jake Lightning', number: '03', role: 'Track Master', image: 'jake-lightning.jpg' }
+              { name: 'Alex Thunder', number: '01', role: 'Lead Driver', icon: '🏎️' },
+              { name: 'Maria Velocity', number: '02', role: 'Speed Specialist', icon: '🏁' },
+              { name: 'Jake Lightning', number: '03', role: 'Track Master', icon: '⚡' }
             ].map((driver, index) => (
               <motion.div
                 key={index}
@@ -139,19 +139,8 @@ const HomePage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="driver-image-container">
-                  <img
-                    src={`/images/drivers/${driver.image}`}
-                    alt={driver.name}
-                    className="driver-image"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="driver-image-placeholder" style={{ display: 'none' }}>
-                    <span>DRIVER #{driver.number}</span>
-                  </div>
+                <div className="driver-icon">
+                  {driver.icon}
                 </div>
                 <div className="driver-info">
                   <h3>{driver.name}</h3>
@@ -178,9 +167,9 @@ const HomePage = () => {
 
           <div className="achievements-grid">
             {[
-              { title: 'Monaco Grand Prix 2024', description: 'Dominant 1-2 finish with record-breaking lap times', image: 'monaco-2024.jpg' },
-              { title: 'Silverstone Championship', description: 'Strategic masterclass in challenging weather conditions', image: 'silverstone.jpg' },
-              { title: 'Constructors Championship', description: 'Third consecutive title with innovative aerodynamics', image: 'constructors.jpg' }
+              { title: 'Monaco Grand Prix 2024', description: 'Dominant 1-2 finish with record-breaking lap times', icon: '🏆' },
+              { title: 'Silverstone Championship', description: 'Strategic masterclass in challenging weather conditions', icon: '🥇' },
+              { title: 'Constructors Championship', description: 'Third consecutive title with innovative aerodynamics', icon: '🎖️' }
             ].map((achievement, index) => (
               <motion.div
                 key={index}
@@ -189,19 +178,8 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="achievement-image-container">
-                  <img
-                    src={`/images/achievements/${achievement.image}`}
-                    alt={achievement.title}
-                    className="achievement-image"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="achievement-image-placeholder" style={{ display: 'none' }}>
-                    <span>VICTORY #{index + 1}</span>
-                  </div>
+                <div className="achievement-icon">
+                  {achievement.icon}
                 </div>
                 <div className="achievement-content">
                   <h3>{achievement.title}</h3>
@@ -227,23 +205,12 @@ const HomePage = () => {
 
           <div className="tech-content">
             <motion.div
-              className="tech-image-container"
+              className="tech-icon-container"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <img
-                src="/images/technology/racing-tech.jpg"
-                alt="Racing Technology"
-                className="tech-image"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div className="tech-image-placeholder" style={{ display: 'none' }}>
-                <span>RACING TECHNOLOGY</span>
-              </div>
+              <div className="tech-icon">⚙️</div>
             </motion.div>
 
             <motion.div
@@ -266,6 +233,53 @@ const HomePage = () => {
               </ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="location">
+        <div className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            VISIT OUR HEADQUARTERS
+          </motion.h2>
+
+          <motion.div
+            className="location-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="location-info">
+              <div className="location-address">
+                <h3>📍 StreakRace Racing HQ</h3>
+                <p>Ghatkopar East, Mumbai</p>
+                <p>Maharashtra 400077, India</p>
+                <div className="location-details">
+                  <p>📞 +91 98765 43210</p>
+                  <p>✉️ info@streakrace.com</p>
+                  <p>🕒 Mon-Sat: 9:00 AM - 6:00 PM</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30154.38647!2d72.9081!3d19.0896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c6b3c5c5c5%3A0x1234567890abcdef!2sGhatkopar%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="400"
+                style={{ border: 0, borderRadius: '8px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="StreakRace Racing HQ Location - Ghatkopar, Mumbai"
+              ></iframe>
+            </div>
+          </motion.div>
         </div>
       </section>
 
